@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-article{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!--  title  -->
+        <div>
+            <h1 class="p2">{{ page.title }}</h1>
+        </div>
+
+        <!--  author info here  -->
+        <div class="author">
+            <div class="v-center">
+                {% image page.author_image width-60 %}
+            </div>
+            <div class="v-center">
+                <h2 class="p4">{{ page.author_title }}</h2>
+                <p class="p2 p3 grey">{{ page.author_bio }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div align="center">
+        {% image page.banner_image width-1000 %}
+    </div>
+
+    <!--  body: stream blocks  -->
+    <div class="container author p4 grey">
+        <section>
+            {% for block in page.body %}
+                <div>
+                    {% include_block block %}
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+{% endblock content %}
