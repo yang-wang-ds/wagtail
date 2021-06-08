@@ -1,0 +1,59 @@
+header img {
+    height: 50px;
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    justify-content: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.author {
+    display: flex;
+}
+
+.author img {
+    display: flex;
+    margin-right: 12px;
+}
+
+.author h2 {
+    margin
+}
+
+.v-center {
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.p1 {
+    font-family: Helvetica;
+}
+
+.p2 {
+    font-family: Georgia;
+}
+
+.p3 {
+    font-style: italic;
+}
+
+.p4 {
+    font-family: Arial;
+}
+
+.grey {
+    color: #606060;
+}
