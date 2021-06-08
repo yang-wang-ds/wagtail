@@ -15,23 +15,7 @@ class Article(Page):
         ('twitter', EmbedBlock()),
     ], blank=True)
 
-    # Define images associated in the article
-    icon_rgb = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Icon RGB',
-    )
-    icon_reverse = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Icon Reverse'
-    )
+    # Define banner image associated with the article
     banner_image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -68,8 +52,6 @@ class Article(Page):
     content_panels = Page.content_panels + [
         FieldPanel('author_info'),
         StreamFieldPanel('body'),
-        ImageChooserPanel('icon_rgb'),
-        ImageChooserPanel('icon_reverse'),
         ImageChooserPanel('banner_image'),
     ]
 
